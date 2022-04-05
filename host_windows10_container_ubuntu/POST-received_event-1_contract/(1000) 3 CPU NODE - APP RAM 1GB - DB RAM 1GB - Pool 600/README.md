@@ -14,4 +14,4 @@
 
 | AVERAGE TIME (MILLISECONDS) | API RAM USAGE | DB RAM USAGE | API CPU USAGE | DB CPU USAGE |
 | --------------------------- | ------------- | ------------ | ------------- | ------------ |
-| 27977                       | 273 MB        | 410 MB       | 403%          | 24%          |
+| 6041                        | 268 MB        | 410 MB       | 800%          | 30%          |
