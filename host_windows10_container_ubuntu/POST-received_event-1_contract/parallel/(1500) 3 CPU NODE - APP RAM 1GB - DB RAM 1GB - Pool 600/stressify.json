@@ -1,0 +1,12 @@
+{
+  "url": "http://localhost:2109/event/received?event-identifier=stress_select&access-key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozMDcsInN1YmplY3RUeXBlIjoiY2xpZW50IiwiaWRlbnRpZmllciI6InRlc3RjbGllbnQifSwiaWF0IjoxNjQ4ODI1ODIxfQ.i0rf-Z8La6zCLHfkuvgh1pJLvMHaMcVxHrzuVQ_pNGs",
+  "method": "POST",
+  "httpHeaders": [],
+  "body": "",
+  "assertScript": "",
+  "reportFolderPath": "D:\\reports",
+  "reportName": "stress",
+  "csvDataPath": "",
+  "mode": "parallel",
+  "threadNumber": 1500
+}
