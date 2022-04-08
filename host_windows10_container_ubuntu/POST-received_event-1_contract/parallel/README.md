@@ -31,3 +31,9 @@ This stress test only test the endpoint with one contract. And the subscribed en
 ## Graph
 
 ![graph](https://i.ibb.co/8MzjVMK/Virtual-Users-frente-a-Time-ms.png)
+
+## Running the test
+
+To stress uses the [stressify](https://github.com/jrichardsz-software-architect-tools/stressify) library was used. Each test directory has its json file ready to be used.
+
+For the url you will need to create a client then a producer and an event named `stress_select` in the eventhos platform and create a contract for it. For the `access-key` pass the access token of the client. You can follow the documentation [https://github.com/usil/eventhos-web/wiki](https://github.com/usil/eventhos-web/wiki)

@@ -33,8 +33,12 @@
 
 ![lineGraph](https://i.ibb.co/k2jfVmL/chart.png)
 
-## Anotations (Max connections limmit reached in mysql)
+## Running the test
 
-Its important to keep in mind that having 3 CPU Nodes tenically equals to having 3 instances of the app running. This means 3 instans of knex, if your max pool coneccions is 1000 then your actual max pool of connections will be 3000, this could generate an error in the database, the max conmnections limit reached (`mysql error 1040`).
+To run those test use the [automatization test server](./test-automatization/readme.md).
 
-To solve this you will have to balance 3 aspects, the nodes, the max pool in knex and the `max_connections` of the mysql db. This means that in the docker compose the line `--max_connections=<desiired connections number>` will be needed in the command atributte of `eventhos-db` container. For the pool modigfi the `DATA_BASE_POOL_MAX` enviroment variable inside the docker-compose file, finally modify `CPU_COUNT` enviroment variable in the same file.
+## Annotations (Max connections limit reached in mysql)
+
+Its important to keep in mind that having 3 CPU Nodes technically equals to having 3 instances of the app running. This means 3 instances of knex, if your max pool connections is 1000 then your actual max pool of connections will be 3000, this could generate an error in the database, the max connections limit reached (`mysql error 1040`).
+
+To solve this you will have to balance 3 aspects, the nodes, the max pool in knex and the `max_connections` of the mysql db. This means that in the docker compose the line `--max_connections=<desired connections number>` will be needed in the command attribute of `eventhos-db` container. For the pool modify the `DATA_BASE_POOL_MAX` environment variable inside the docker-compose file, finally modify `CPU_COUNT` environment variable in the same file.
