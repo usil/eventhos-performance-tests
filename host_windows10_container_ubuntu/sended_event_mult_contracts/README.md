@@ -15,9 +15,9 @@
 
 ## Eventhos Api Configuration
 
-| CPU NODES | API RAM | DB RAM | DB Max POOL |
-| --------- | ------- | ------ | ----------- |
-| 3         | 1GB     | 1GB    | 300         |
+| CPU NODES | API RAM | DB RAM | DB Max POOL | Max Database Connections |
+| --------- | ------- | ------ | ----------- | ------------------------ |
+| 3         | 1GB     | 1GB    | 300         | 1100                     |
 
 ## Results
 
@@ -31,12 +31,10 @@
 
 ## Graph
 
-![lineGraph](https://i.ibb.co/b1Hr40s/chart22.png)
+![lineGraph](https://i.ibb.co/k2jfVmL/chart.png)
 
-## How to run the test
+## Anotations (Max connections limmit reached in mysql)
 
-Running this test requires to understand how the code in eventhos works. For those that don't here it is a semi-detailed guide.
+Its important to keep in mind that having 3 CPU Nodes tenically equals to having 3 instances of the app running. This means 3 instans of knex, if your max pool coneccions is 1000 then your actual max pool of connections will be 3000, this could generate an error in the database, the max conmnections limit reached (`mysql error 1040`).
 
-### Create a stored procedure
-
-First run the script that is in this directory to create a stored procedure.
+To solve this you will have to balance 3 aspects, the nodes, the max pool in knex and the `max_connections` of the mysql db. This means that in the docker compose the line `--max_connections=<desiired connections number>` will be needed in the command atributte of `eventhos-db` container. For the pool modigfi the `DATA_BASE_POOL_MAX` enviroment variable inside the docker-compose file, finally modify `CPU_COUNT` enviroment variable in the same file.
